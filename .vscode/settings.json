@@ -1,0 +1,17 @@
+{
+    "idf.currentSetup": "D:\\Espressif\\v6.0.2\\esp-idf",
+    "idf.port": "COM11",
+    "idf.flashType": "UART",
+    "idf.openOcdConfigs": [
+        "board/esp32s3-builtin.cfg"
+    ],
+    "idf.customExtraVars": {
+      "IDF_TARGET": "esp32s3"
+    },
+    "clangd.path": "C:\\Espressif\\tools\\esp-clang\\esp-20.1.1_20250829\\esp-clang\\bin\\clangd.exe",
+    "clangd.arguments": [
+      "--background-index",
+      "--query-driver=**",
+      "--compile-commands-dir=d:\\Code\\esp\\dglab_esp32s3_v3_emulator\\build"
+    ]
+}
