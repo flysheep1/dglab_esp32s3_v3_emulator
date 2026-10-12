@@ -23,10 +23,11 @@ jobs:
           path: '.'
 
       # 把 bootloader + partition-table + app 合并成一个 merged.bin，方便用户一键烧录
-      # 注意：esptool 装在 IDF 的 Python 虚拟环境里，必须用 $IDF_PYTHON_ENV_PATH 调，系统 python 没有 esptool
+      # 注意：espressif action 会把 IDF 工具目录加入 PATH，直接用 esptool.py 即可；
+      # 不要用 $IDF_PYTHON_ENV_PATH，该变量在后续步骤里未导出（会是空）。
       - name: Merge firmware to single bin
         run: |
-          $IDF_PYTHON_ENV_PATH/bin/python -m esptool --chip esp32s3 merge_bin \
+          esptool.py --chip esp32s3 merge_bin \
             -o merged.bin \
             --flash_mode dio --flash_size 4MB \
             0x0 build/bootloader/bootloader.bin \
